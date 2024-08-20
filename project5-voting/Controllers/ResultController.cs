@@ -94,7 +94,7 @@ namespace project5_voting.Controllers
             return (Math.Round(percentage, 2)) * 100;
         }
 
-       
+
 
         //عشان اجيب عدد اصوات المحليين في حسب الدائرة
         public long localVotersCount(string d)
@@ -278,13 +278,14 @@ namespace project5_voting.Controllers
                     var canRowsList = string.Join(", ", canRow);
                     string[] canArray = canRowsList.Split(',');
 
-                    if (canArray[2] == listName && canArray[3].Trim() == "عام")
+                    if (canArray[2] == listName && canArray[3].Trim() == "تنافس")
                     {
-                        string canditateNameAndId = $"{listsArray[0]}, {listsArray[1]}, {d}, {canArray[0]}, {canArray[1]}";
+                        string canditateNameAndId = $"{listsArray[0]}, {listsArray[1]}, {d}, {canArray[0]}, {canArray[1]}, {canArray[3]}, {canArray[4]}";
 
                         localWinners.Add(canditateNameAndId);
 
                         seatsCount++;
+
 
                         if (seatsCount == listsSeats)
                         {
