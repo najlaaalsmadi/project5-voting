@@ -126,7 +126,7 @@ namespace project5_voting.Controllers
             return View(lists);
         }
 
-        public ActionResult localCandidateAdmin(long? id)
+        public ActionResult localCandidateAdmin(int? id)
         {
             if (id == null)
             {
@@ -213,7 +213,7 @@ namespace project5_voting.Controllers
                     TempData["wrongId"] = "يجب أن يكون هناك على الأقل أنثى واحدة في القائمة.";
                     return false;
                 }
-                if (candidateCount > 4)
+                if (candidateCount > 5)
                 {
                     TempData["wrongId"] = "يجب أن يكون عدد المتقدمين 4 كحد أقصى.";
                     return false;
@@ -338,7 +338,24 @@ namespace project5_voting.Controllers
                 db.localCandidates.Remove(localCandidate);
                 db.SaveChanges();
             }
-            return RedirectToAction("localCandidate");
+            return RedirectToAction("locaListAdmin");
+        }
+
+        [HttpPost]
+        public ActionResult Deletelist(int id)
+        {
+            var locallist = db.localLists.Find(id);
+            var localCandidate = db.localCandidates.Where(l => l.listKey == id).ToList();
+            foreach (var candidate in localCandidate)
+            {
+
+                db.localCandidates.Remove(candidate);
+                db.SaveChanges();
+
+            }
+            db.localLists.Remove(locallist);
+            db.SaveChanges();
+            return RedirectToAction("locaListAdmin");
         }
 
     }

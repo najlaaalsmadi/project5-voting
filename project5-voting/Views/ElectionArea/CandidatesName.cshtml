@@ -95,7 +95,7 @@
             <tr>
 
 
-                <th>صورة المترشح</th>
+                <th style="text-align:center;">صورة المترشح</th>
                 <th>نوع الكرسي</th>
                 <th>اسم القائمة</th>
                 <th>اسم المرشح</th>
@@ -106,7 +106,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td><img src="~/image/@item.img" alt="Alternate Text" /></td>
+                    <td style="text-align:center;"><img src="~/image1/@item.img" alt="Alternate Text" style="width:70px;"/></td>
                     <td>@Html.DisplayFor(modelItem => item.typeOfChair)</td>
                     <td>@Html.DisplayFor(modelItem => item.listName)</td>
                     <td>@Html.DisplayFor(modelItem => item.candidateName)</td>

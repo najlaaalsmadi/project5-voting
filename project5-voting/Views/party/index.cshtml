@@ -29,9 +29,9 @@
 
         <!-- Action Buttons -->
         <div class="text-center mb-4">
-            @if (Model.Count() == 41)
+            @if (Model.Count() == 3)
             {
-                <button id="goToNextPage" class="btn btn-primary btn-lg">اذهب إلى الصفحة التالية</button>
+                <a  href="@Url.Action("success", "party")" class="btn btn-primary btn-lg">اذهب إلى الصفحة التالية</a>
             }
             else
             {
@@ -107,7 +107,7 @@
         });
         <script type="text/javascript">
             document.getElementById("goToNextPage").onclick = function () {
-                window.location.href = '@Url.Action("success", "partyCandidates")';
+                window.location.href = '@Url.Action("success", "party")';
             };
         </script>
     }

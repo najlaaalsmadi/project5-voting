@@ -29,11 +29,5 @@ namespace project5_voting.Models
         public Nullable<int> partyVote { get; set; }
         public Nullable<int> whiteLocalVote { get; set; }
         public Nullable<int> whitePartyVote { get; set; }
-
-        public class LocalCandidatesGroupedViewModel
-        {
-            public string ListName { get; set; }
-            public List<localCandidate> Candidates { get; set; }
-        }
     }
 }

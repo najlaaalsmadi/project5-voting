@@ -27,12 +27,13 @@ namespace project5_voting.Models
         public Nullable<long> counter { get; set; }
         public string img { get; set; }
         public Nullable<long> listKey { get; set; }
+    
         public virtual localList localList { get; set; }
-      
     }
     public class LocalCandidatesGroupedViewModel
     {
         public string ListName { get; set; }
         public List<localCandidate> Candidates { get; set; }
     }
+
 }

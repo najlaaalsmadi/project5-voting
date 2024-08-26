@@ -39,21 +39,19 @@
                                     مقبول
                                 </td>
                             }
-                        <td>
-                            @Html.ActionLink("التفاصيل", "localCandidateAdmin", new { id = item.id }, new { @class = "btn btn-info btn-sm rounded-pill shadow" })
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    @Html.ActionLink("التفاصيل", "localCandidateAdmin", new { id = item.id }, new { @class = "btn btn-info btn-sm rounded-pill shadow me-2" })
 
-                            @using (Html.BeginForm("Delete", "localLists", FormMethod.Post, new { id = "delete-form-" + item.id }))
-                            {
-                                @Html.AntiForgeryToken()
-                                @Html.Hidden("id", item.id)
-                                <button type="submit" class="btn btn-danger btn-sm rounded-pill shadow mt-2" onclick="return confirm('هل أنت متأكد أنك تريد حذف هذا العنصر؟')">حذف</button>
-                            }
-
-                            @*@using (Html.BeginForm("accept", "localLists", FormMethod.Post, new { id = "delete-form-" + item.id }))
-                            { 
-                            
-                            }*@
+                                    @using (Html.BeginForm("Deletelist", "localCandidates", FormMethod.Post, new { id = "delete-form-" + item.id }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.Hidden("id", item.id)
+                                        <button type="submit" class="btn btn-danger btn-sm rounded-pill shadow mr-2" onclick="return confirm('هل أنت متأكد أنك تريد حذف هذا العنصر؟')">حذف</button>
+                                    }
+                                </div>
                             </td>
+
                         </tr>
                     }
                 </tbody>

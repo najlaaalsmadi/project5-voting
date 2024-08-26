@@ -109,7 +109,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td><img src="~/Image1/@item.candidateImage" alt="Alternate Text" height="75" /></td>
+                        <td style="text-align:center;" ><img src="~/Image1/@item.candidateImage" alt="Alternate Text" height="75" /></td>
                         <td>@Html.DisplayFor(modelItem => item.email)</td>
                         <td>@(item.birthday.HasValue ? item.birthday.Value.ToString("yyyy-MM-dd") : "غير محدد")</td>
                         <td>@Html.DisplayFor(modelItem => item.gender)</td>
